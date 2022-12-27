@@ -6,7 +6,7 @@ pipeline {
                     echo "Hi this is build stage"
                 }
             }
-            stage("Docker Login new"){
+            stage("Docker Login new final"){
             steps {
            withCredentials([usernamePassword(credentialsId: 'ACRLOGIN', passwordVariable: 'PASS', usernameVariable: 'ACR_LOGIN')]) {
                 sh 'docker login azacreufirst.azurecr.io --username $ACR_LOGIN --password $PASS'
