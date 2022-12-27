@@ -9,7 +9,7 @@ pipeline {
             stage("Docker Login"){
             steps {
            withCredentials([usernamePassword(credentialsId: 'ACRLOGIN', passwordVariable: 'PASS', usernameVariable: 'ACR_LOGIN')]) {
-                sh 'docker login azacreufirst.azureacr.io --username $ACR_LOGIN --password $PASS'
+                sh 'docker login azacreufirst.azurecr.io --username $ACR_LOGIN --password $PASS'
                 sh 'docker images'
             }
             }
